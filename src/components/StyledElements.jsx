@@ -6,8 +6,9 @@ export const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 10rem;
+  align-items: ${(props) => (props.center ? "center" : "flex-start")};
+  justify-content: center;
+  margin-top: ${(props) => (props.center ? "0" : "10rem")};
 `;
 
 export const OuterWrapper = styled.div`
