@@ -8,11 +8,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: ${(props) => (props.center ? "center" : "flex-start")};
   justify-content: center;
-  margin-top: ${(props) => (props.center ? "0" : "10rem")};
 `;
 
 export const OuterWrapper = styled.div`
   margin-inline: auto;
+  margin-block: 6.25rem;
+  position: relative;
   width: 80%;
   display: flex;
   align-items: flex-start;
@@ -25,7 +26,9 @@ export const OuterWrapper = styled.div`
 export const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${(props) => (props.isFull ? "100%" : "50% ")};
+  padding-inline: 3.125rem;
+  padding-top: 5rem;
+  width: ${(props) => (props.isFull ? "100%" : "70% ")};
 
   @media (max-width: 767px) {
     width: 100%;

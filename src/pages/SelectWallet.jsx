@@ -40,7 +40,7 @@ export default function SelectWallet() {
   return (
     <Container>
       <OuterWrapper>
-        {/* <LinkStatus /> */}
+        <LinkStatus />
         <InnerWrapper>
           <Heading
             className="pb-10"

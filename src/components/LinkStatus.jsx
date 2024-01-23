@@ -1,12 +1,13 @@
-import lock from "../assets/icons/lock.svg";
+import lock from "../assets/icons/lock-circle.svg";
 
 export default function LinkStatus({ className }) {
   return (
-    <div className={`color-green flex gap-2 align-center ${className}`}>
-      <span className="">
-        <img src={lock} aria-hidden className="h-6" />
-      </span>
-      <span className="text-green">This link is secure</span>
+    <div
+      className={`absolute top-0 left-0  z-10 color-green flex gap-1 align-center ${className}`}
+    >
+      <img src={lock} aria-hidden className="h-8" />
+
+      <span className="text-green text-[1.25rem]">This link is secure</span>
     </div>
   );
 }
