@@ -16,14 +16,20 @@ export default function LoadingPage() {
 
   return (
     <Container center="true">
-      <div className="rounded-full  p-6 border-2 mb-6">
-        <video autoPlay loop muted width="50px" height="auto">
+      <div className="rounded-full p-3 md:p-6 border-2 mb-6">
+        <video
+          autoPlay
+          loop
+          muted
+          className="w-[30px] md:w-[50px]"
+          height="auto"
+        >
           <source src={gif} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <h2 className="text-[2rem]  text-black">
+      <h2 className="text-[2rem] text-center text-black">
         Give us a few, we're securing your link
       </h2>
     </Container>
