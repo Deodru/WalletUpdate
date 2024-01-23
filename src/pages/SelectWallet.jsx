@@ -24,7 +24,7 @@ const wallets = [
 ];
 
 export default function SelectWallet() {
-  const [selected, setSelected] = useState(wallets[0]);
+  const [selected, setSelected] = useState("");
   const { setFormData, formData } = useFormContext();
   const navigate = useNavigate();
 
@@ -57,7 +57,7 @@ export default function SelectWallet() {
             size="small"
             onClickFunction={handleWalletSubmission}
           />
-          <p className="text-gray text-base">
+          <p className="text-gray text-base pt-12">
             Your support is handled by{" "}
             <a href="#" className="text-black font-bold">
               Ben HelpDesk

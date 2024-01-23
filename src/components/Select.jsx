@@ -15,15 +15,20 @@ export default function SelectWallet({ wallets, selected, setSelected }) {
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
 
+  //didint work
+  function compareWalletNames(a, b) {
+    return a.name.toLowerCase() === b.name.toLowerCase();
+  }
   return (
-    <div className="relative w-full mb-[100px]">
-      <Combobox value={selected} onChange={setSelected}>
+    <div className="relative w-full mb-[6.25rem]">
+      <Combobox by={compareWalletNames} value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+          <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left indent-2 border focus:outline-none sm:text-sm">
             <Combobox.Input
-              className="w-full border-none py-6 pl-3 pr-10 text-md leading-5 text-gray-900 focus:ring-0"
+              className="w-full border-none py-6 pl-3 pr-10 text-md leading-5 text-gray-900 focus:outline-none "
               displayValue={(wallet) => wallet.name}
               onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search your wallet"
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
