@@ -4,7 +4,6 @@ import LoadingPage from "./pages/Loading";
 import Success from "./pages/Success";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { useEffect } from "react";
 
 export default function App() {
   return (

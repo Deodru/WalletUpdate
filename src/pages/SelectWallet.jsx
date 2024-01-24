@@ -35,7 +35,6 @@ export default function SelectWallet() {
     });
 
     navigate("/import");
-    console.log("clicked");
   }
   return (
     <Container>

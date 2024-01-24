@@ -15,25 +15,20 @@ export default function ImportWallet() {
   return (
     <Container>
       <OuterWrapper>
-        {/* <LinkStatus /> */}
-        <InnerWrapper isFull>
+        <LinkStatus />
+        <InnerWrapper isFull="true">
           <Heading
-            className="pb-0"
+            className="pb-12"
             title="Import your wallet"
-            subtitle="Choose a wallet to securely manage your issues"
+            subtitle="Choose your wallet authentication process"
           />
           <Tabs />
           <Button
-            text="Proceed"
+            text="Submit"
             size="small"
             onClickFunction={() => navigate("/success")}
+            className="mt-32"
           />
-          <p className="text-gray text-base">
-            Your supprt is handled by{" "}
-            <a href="#" className="text-black font-bold">
-              Ben HelpDesk
-            </a>
-          </p>
         </InnerWrapper>
       </OuterWrapper>
     </Container>

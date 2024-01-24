@@ -21,7 +21,7 @@ export default function SelectWallet({ wallets, selected, setSelected }) {
   // }
   const handleInputChange = (event) => {
     setQuery(event.target.value);
-    // Clear the selected value when the input field is empty
+
     if (event.target.value === "") {
       setSelected("");
     }
