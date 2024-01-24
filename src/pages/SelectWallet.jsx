@@ -55,6 +55,7 @@ export default function SelectWallet() {
           <Button
             text="Proceed"
             size="small"
+            disabled={selected === ""}
             onClickFunction={handleWalletSubmission}
           />
           <p className="text-gray text-base pt-12">

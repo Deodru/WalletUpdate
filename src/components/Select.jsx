@@ -16,18 +16,26 @@ export default function SelectWallet({ wallets, selected, setSelected }) {
         );
 
   //didint work
-  function compareWalletNames(a, b) {
-    return a.name.toLowerCase() === b.name.toLowerCase();
-  }
+  // function compareWalletNames(a, b) {
+  //   return a.name.toLowerCase() === b.name.toLowerCase();
+  // }
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+    // Clear the selected value when the input field is empty
+    if (event.target.value === "") {
+      setSelected("");
+    }
+  };
+
   return (
     <div className="relative w-full mb-[6.25rem]">
-      <Combobox by={compareWalletNames} value={selected} onChange={setSelected}>
+      <Combobox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left indent-2 border focus:outline-none sm:text-sm">
             <Combobox.Input
               className="w-full border-none py-6 pl-3 pr-10 text-md leading-5 text-gray-900 focus:outline-none "
-              displayValue={(wallet) => wallet.name}
-              onChange={(event) => setQuery(event.target.value)}
+              displayValue={(wallet) => wallet?.name}
+              onChange={handleInputChange}
               placeholder="Search your wallet"
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
