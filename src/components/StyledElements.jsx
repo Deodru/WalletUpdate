@@ -32,5 +32,6 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
+    align-items: center;
   }
 `;
