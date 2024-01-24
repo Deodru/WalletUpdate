@@ -19,7 +19,7 @@ export const OuterWrapper = styled.div`
   align-items: flex-start;
 
   @media (max-width: 767px) {
-    width: 90%;
+    width: 95%;
     align-items: center;
   }
 `;

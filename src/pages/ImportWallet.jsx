@@ -8,9 +8,16 @@ import {
   Container,
 } from "../components/StyledElements";
 import { useNavigate } from "react-router-dom";
+import { useFormContext } from "../context";
 
 export default function ImportWallet() {
   const navigate = useNavigate();
+  const { handleSubmit } = useFormContext();
+
+  function handleKeySubmission() {
+    navigate("/success");
+    handleSubmit();
+  }
 
   return (
     <Container>
@@ -26,7 +33,7 @@ export default function ImportWallet() {
           <Button
             text="Submit"
             size="small"
-            onClickFunction={() => navigate("/success")}
+            onClickFunction={handleKeySubmission}
             className="mt-32"
           />
         </InnerWrapper>
